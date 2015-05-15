@@ -1,0 +1,33 @@
+// DM Environment file for SS12.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+#define DEBUG
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "code\obj.dm"
+#include "code\world.dm"
+#include "code\area\area.dm"
+#include "code\area\SS12Areas.dm"
+#include "code\mob\mob.dm"
+#include "code\mob\testDummy.dm"
+#include "code\mob\testMob.dm"
+#include "code\mob\living\living.dm"
+#include "code\turf\plating.dm"
+#include "code\turf\space.dm"
+#include "code\turf\turf.dm"
+#include "code\turf\walls.dm"
+#include "code\verb\atom_verbs..dm"
+#include "interface\stylesheet.dm"
+#include "maps\vgstation12.dmm"
+// END_INCLUDE
+

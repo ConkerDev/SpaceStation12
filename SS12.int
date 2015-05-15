@@ -1,0 +1,11 @@
+// BEGIN_INTERNALS
+/*
+MAP_ICON_TYPE: 0
+WINDOW: SS12.dme;code\turf\space.dm;code\world.dm;maps\vgstation12.dmm;code\obj.dm;icons\turf\floors.dmi;code\turf\turf.dm;code\turf\plating.dm;code\mob\mob.dm;icons\turf\space.dmi;code\mob\testDummy.dm;code\mob\testMob.dm;icons\mob\human.dmi;code\mob\living\living.dm;icons\mob\animal.dmi
+LAST_COMPILE_VERSION: 506.1249
+DIR: code code\mob code\mob\living code\verb icons icons\mob icons\turf interface maps Lib 
+FILE: code\mob\living\living.dm
+LAST_COMPILE_TIME: 1431732558
+AUTO_FILE_DIR: OFF
+*/
+// END_INTERNALS
