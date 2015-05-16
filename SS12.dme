@@ -14,14 +14,17 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "code\obj.dm"
 #include "code\world.dm"
 #include "code\area\area.dm"
 #include "code\area\SS12Areas.dm"
+#include "code\datum\construction_datum.dm"
+#include "code\datum\queue.dm"
+#include "code\mob\living.dm"
 #include "code\mob\mob.dm"
 #include "code\mob\testDummy.dm"
 #include "code\mob\testMob.dm"
-#include "code\mob\living\living.dm"
+#include "code\obj\obj.dm"
+#include "code\obj\structure\structure.dm"
 #include "code\turf\plating.dm"
 #include "code\turf\space.dm"
 #include "code\turf\turf.dm"
