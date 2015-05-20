@@ -18,6 +18,7 @@
 #include "code\area\area.dm"
 #include "code\area\SS12Areas.dm"
 #include "code\datum\construction_datum.dm"
+#include "code\datum\events.dm"
 #include "code\datum\mind.dm"
 #include "code\datum\mob\living\health.dm"
 #include "code\mob\living.dm"
