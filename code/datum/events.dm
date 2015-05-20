@@ -4,6 +4,8 @@ Event datums system.
 What do they do? Allow you to 'listen' to certain events on a certain thing.
 When that thing happens, the proc you specified will be called.
 
+Oh, and don't use sleep() in something that's called by the events system.
+
 */
 
 /datum/events
@@ -91,8 +93,8 @@ When that thing happens, the proc you specified will be called.
 			event.stop_listening(src, event_id)
 
 /*
-	This proc invokes an event, trigerrin any listening events.
-	Params: - nr. 1: ID of the event to invoke.
+	This proc invokes an event, triggering any listening events.
+	Params: - event_id: ID of the event to invoke.
 			- others: Optional arguments with which listening procs are called.
 */
 
@@ -116,5 +118,31 @@ When that thing happens, the proc you specified will be called.
 
 	if(!hascall(parent, procname))
 		return
+
+	call(parent, procname) (arglist(extraargs))
+
+//Events datum subtype that uses a queue, events are added to a queue, and are invoked first-in first-out on calling next_event()
+//Maintains all functionality of the parent type.
+
+/datum/events/queued
+	var/datum/queue/event_queue[0] //That qeue I mentioned 3 lines up. Format is list(procname = extraargs, procname2 = someotherextraargs, ...)
+
+/datum/events/queued/trigger(var/datum/events/sender, var/event_id, var/list/extraargs)
+	if(!sender || !event_id || !subscribed[sender] || !subscribed[sender][event_id])
+		return 0
+
+	var/procname = subscribed[sender][event_id]
+
+	if(!hascall(parent, procname))
+		return
+
+	event_queue.add(procname, extraargs)
+
+//Calls the next event in the qeue, first in first out.
+/datum/events/queued/proc/next_event()
+	var/list/queue_out = event_queue.next()
+
+	var/procname = queue_out[1]
+	var/extraargs = queue_out[2]
 
 	call(parent, procname) (arglist(extraargs))

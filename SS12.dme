@@ -20,6 +20,7 @@
 #include "code\datum\construction_datum.dm"
 #include "code\datum\events.dm"
 #include "code\datum\mind.dm"
+#include "code\datum\queue.dm"
 #include "code\datum\mob\living\health.dm"
 #include "code\mob\living.dm"
 #include "code\mob\mob.dm"
